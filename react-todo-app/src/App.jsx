@@ -9,28 +9,50 @@ function App() {
     { id: 2, text: 'Build a To-Do App', completed: true },
   ]);
 
-  const addTodo = (text) => {
+  // const addTodo = (text) => {
+  //   const newTodo = {
+  //     id: Date.now(),
+  //     text: text,
+  //     completed: false,
+  //   };
+  //   setTodos([...todos, newTodo]);
+  // };
+
+  const addTodo = (text)=> {
     const newTodo = {
       id: Date.now(),
-      text: text,
-      completed: false,
+      text:text,
+      completed:false
+
     };
     setTodos([...todos, newTodo]);
-  };
+  }
 
-  const deleteTodo = (idToDelete) => {
-    setTodos(todos.filter(todo => todo.id !== idToDelete));
-  };
+  // const deleteTodo = (idToDelete) => {
+  //   setTodos(todos.filter(todo => todo.id !== idToDelete));
+  // };
 
-  const toggleComplete = (idToToggle) => {
+    const deleteTodo = (idToDelete)=> {
+      setTodos(todos.filter(todo => todo.id !== idToDelete))
+    }
+
+  // const toggleComplete = (idToToggle) => {
+  //   setTodos(
+  //     todos.map(todo =>
+  //       todo.id === idToToggle
+  //         ? { ...todo, completed: !todo.completed }
+  //         : todo
+  //     )
+  //   );
+
+  const toggleComplete = (idToToggle)=>{
     setTodos(
-      todos.map(todo =>
-        todo.id === idToToggle
-          ? { ...todo, completed: !todo.completed }
-          : todo
-      )
-    );
-  };
+        todos.map(todo=>
+          todo.id === idToToggle ? {...todo, completed: !todo.completed} : todo
+        )
+    )
+  }
+  
 
   return (
     <div className="app">
